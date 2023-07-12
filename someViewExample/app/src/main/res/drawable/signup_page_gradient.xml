@@ -3,7 +3,10 @@
     <gradient
         android:startColor="#4B6CD6"
         android:centerColor="#6586F0"
-        android:endColor="#D6D6D6" />
+        android:endColor="#D6D6D6"
+        android:angle="180"/>
+<!--    angle -> Multiple of 45-->
+
     <corners
         android:radius="0dp"/>
 <!--    <gradient-->
