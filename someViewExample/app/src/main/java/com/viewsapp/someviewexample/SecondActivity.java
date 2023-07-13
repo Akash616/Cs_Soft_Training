@@ -21,11 +21,12 @@ public class SecondActivity extends AppCompatActivity {
 
         //Bundle
         Bundle bundle = getIntent().getExtras();
-        String name = bundle.getString("fname");
+        bundle.getString("fname");
 
         btn_secondScreen = findViewById(R.id.btn_secondScreen);
         txt_name = findViewById(R.id.txt_name);
 
+        //String name = bundle.getString("fname");
         //txt_name.setText("First Name : "+name); //1st way
         txt_name.setText(bundle.getString("fname")); //2nd way
 
