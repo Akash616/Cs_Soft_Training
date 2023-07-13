@@ -2,6 +2,7 @@ package com.exampleapp.onclickbuttonexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_one, btn_two, btn_three, btn_four;
+    Button btn_one, btn_two, btn_three, btn_four,btn_five;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btn_two =  findViewById(R.id.btn_two);
         btn_three =  findViewById(R.id.btn_three);
         btn_four =  findViewById(R.id.btn_four);
+        btn_five =  findViewById(R.id.btn_five);
 
         btn_one.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,9 +50,18 @@ public class MainActivity extends AppCompatActivity {
         btn_four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btn_four.setText("Button four clicked");
-                Toast.makeText(getApplicationContext(), "Button 4 Clicked", Toast.LENGTH_SHORT).show();
-                btn_one.setText("Button 1");
+              btn_four.setText("Button four clicked");
+              Toast.makeText(getApplicationContext(), "Button 4 Clicked", Toast.LENGTH_SHORT).show();
+              btn_one.setText("Button 1");
+            }
+        });
+
+        //Intent -> next screen
+        btn_five.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
 
