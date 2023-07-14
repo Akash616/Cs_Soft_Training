@@ -40,6 +40,8 @@ public class SecondActivity extends AppCompatActivity {
                 intent.putExtra("password", et_password.getText().toString());
 
                 startActivity(intent);
+
+                finish(); //finish this activity
             }
         });
 
