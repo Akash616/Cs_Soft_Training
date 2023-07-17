@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 // storing the string value in the bundle
                 // which is mapped to key
                 bundle.putString("Name", et_name.getText().toString());
-                bundle.putInt("Age", Integer.parseInt(et_age.getText().toString()));
+                //bundle.putInt("Age", Integer.parseInt(et_age.getText().toString()));
                 bundle.putString("Email", et_email.getText().toString());
                 bundle.putString("Password", et_password.getText().toString());
 

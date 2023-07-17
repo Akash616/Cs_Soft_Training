@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
-    Integer age; //global variable
+   // int age; //global variable
     TextView tv_detail;
 
     @Override
@@ -19,11 +19,11 @@ public class SecondActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("Name"); //name - local variable
-        age = bundle.getInt("Age");
+        //age = bundle.getInt("Age");
         String email = bundle.getString("Email");
         String password = bundle.getString("Password");
 
-        tv_detail.setText("Name : "+name+"\n Age : "+age+"\n Email : "+email+"\n Password : "+password);
+        tv_detail.setText("Name : "+name+"\nEmail : "+email+"\nPassword : "+password);
         //tv_detail.setText(bundle.getString("Name"));
 
     }

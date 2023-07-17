@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registrationform.RegistrationForm"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration Form"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:fontFamily="serif"
+        android:textColor="@color/reg_color"
+        android:drawableStart="@drawable/reg"
+        android:drawablePadding="10dp"
+        android:layout_marginBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textSize="15sp"
+        android:inputType="text"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/registration_form_et_design"
+        android:padding="10dp"
+        android:drawableStart="@drawable/person"
+        android:drawablePadding="8dp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="5dp" />
+
+        <RadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:layout_marginEnd="8dp"
+            android:checked="true"
+            android:buttonTint="@color/reg_color"/>
+
+        <RadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:layout_marginEnd="8dp"/>
+
+        <RadioButton
+            android:id="@+id/rb_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:layout_marginEnd="8dp"/>
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:textSize="15sp"
+        android:inputType="number"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/registration_form_et_design"
+        android:padding="10dp"
+        android:drawableStart="@drawable/calendar"
+        android:drawablePadding="8dp"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textSize="15sp"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/registration_form_et_design"
+        android:padding="10dp"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="8dp"/>
+
+    <EditText
+        android:id="@+id/et_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Country"
+        android:textSize="15sp"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/registration_form_et_design"
+        android:padding="10dp"
+        android:drawableStart="@drawable/location"
+        android:drawablePadding="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Your Interested Languages"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="5sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="1dp">
+
+        <CheckBox
+            android:id="@+id/cb_android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android"
+            android:textSize="15sp"
+            android:layout_marginEnd="10dp"/>
+
+        <CheckBox
+            android:id="@+id/cb_flutter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flutter"
+            android:checked="true"
+            android:textSize="15sp"
+            android:buttonTint="@color/reg_color"
+            android:layout_marginEnd="10dp"/>
+
+        <CheckBox
+            android:id="@+id/cb_ios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IOs"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone"
+        android:textSize="15sp"
+        android:inputType="number"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/registration_form_et_design"
+        android:padding="10dp"
+        android:drawableStart="@drawable/phone"
+        android:drawablePadding="8dp"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textSize="15sp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/registration_form_et_design"
+        android:padding="10dp"
+        android:drawableStart="@drawable/password"
+        android:drawablePadding="8dp"
+        />
+
+    <Button
+        android:id="@+id/btn_createaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Create Account"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/reg_color"
+        android:padding="10dp"/>
+
+</LinearLayout>

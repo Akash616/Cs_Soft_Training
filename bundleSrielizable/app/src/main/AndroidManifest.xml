@@ -13,6 +13,30 @@
         android:theme="@style/Theme.BundleSrielizable"
         tools:targetApi="31">
         <activity
+            android:name=".registrationform.RegistrationDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".registrationform.RegistrationForm"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".howto.imple.modalclass.FourthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".howto.imple.modalclass.ThirdActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
