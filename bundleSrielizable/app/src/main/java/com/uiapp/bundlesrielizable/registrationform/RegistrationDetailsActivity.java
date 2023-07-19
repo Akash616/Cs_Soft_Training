@@ -18,20 +18,36 @@ public class RegistrationDetailsActivity extends AppCompatActivity {
 
         tv_registrationdetail = findViewById(R.id.tv_registrationdetail);
 
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null) {
+//        Bundle bundle = getIntent().getExtras();
+//        if(bundle != null) {
+//
+//            String name = bundle.getString("Name");
+//            int age = bundle.getInt("Age");
+//            String email = bundle.getString("Email");
+//            String country = bundle.getString("Country");
+//            String phone = bundle.getString("Phone");
+//            //String password =  bundle.getString("Password");
 
-            String name = bundle.getString("Name");
-            int age = bundle.getInt("Age");
-            String email = bundle.getString("Email");
-            String country = bundle.getString("Country");
-            String phone = bundle.getString("Phone");
-            //String password =  bundle.getString("Password");
+//            tv_registrationdetail.setText("Name : "+name+"\nGender : "+bundle.getString("Gender")+
+//                    "\nAge : "+age+"\nEmail : "+email+"\nCountry : "+country+"\nInterested Languages : \n"+
+//                    bundle.getString("Interest")+"Phone : "+phone+
+//                    "\nPassword : "+bundle.getString("Password"));
+//
+//        }
 
-            tv_registrationdetail.setText("Name : "+name+"\nGender : "+bundle.getString("Gender")+
+        //-------------------Modal class-----------------------
+        DetailsModalClass detail = (DetailsModalClass) getIntent().getSerializableExtra("Details");
+        if(detail != null){
+            String name = detail.getName();
+            int age = detail.getAge();
+            String email = detail.getEmail();
+            String country = detail.getCountry();
+            String phone = detail.getPhone();
+
+            tv_registrationdetail.setText("Name : "+name+"\nGender : "+age+
                     "\nAge : "+age+"\nEmail : "+email+"\nCountry : "+country+"\nInterested Languages : \n"+
-                    bundle.getString("Interest")+"Phone : "+phone+
-                    "\nPassword : "+bundle.getString("Password"));
+                    country+"Phone : "+phone+
+                    "\nPassword : "+detail.getPassword());
 
         }
 

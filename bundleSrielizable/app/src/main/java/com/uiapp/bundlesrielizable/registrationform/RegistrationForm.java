@@ -93,16 +93,24 @@ public class RegistrationForm extends AppCompatActivity {
 
                     //----------modal class object-----------------------------------
                     DetailsModalClass details = new DetailsModalClass();
+                    details.setName(et_name.getText().toString());
                     details.setAge(Integer.parseInt(et_age.getText().toString()));
+                    details.setEmail(et_email.getText().toString());
+                    details.setCountry(et_country.getText().toString());
+                    details.setPhone(et_phone.getText().toString());
                     details.setPassword(et_password.getText().toString());
+
                     //---------bundle object-----------------------------------------
                     Bundle bundle = new Bundle();
-                    bundle.putString("Name", et_name.getText().toString());
-                    bundle.putInt("Age", details.getAge());
-                    bundle.putString("Email", et_email.getText().toString());
-                    bundle.putString("Country", et_country.getText().toString());
-                    bundle.putString("Phone", et_phone.getText().toString());
-                    bundle.putString("Password", details.getPassword());
+//                    bundle.putString("Name", et_name.getText().toString());
+//                    bundle.putInt("Age", Integer.parseInt(et_age.getText().toString()));
+//                    bundle.putString("Email", et_email.getText().toString());
+//                    bundle.putString("Country", et_country.getText().toString());
+//                    bundle.putString("Phone", et_phone.getText().toString());
+//                    bundle.putString("Password", et_password.getText().toString());
+                    //-----------modal class use (only one key use)--------------------
+                    bundle.putSerializable("Details", details); //details error ? -> implements Serializable
+                    intent.putExtras(bundle);
                     //------getting value from radio buttons-------------------------
                     String gender = "";
                     if (rb_male.isChecked()) {
@@ -124,9 +132,9 @@ public class RegistrationForm extends AppCompatActivity {
                     if (cb_ios.isChecked()) {
                         interest += " - "+cb_ios.getText().toString()+"\n";
                     }
-                    bundle.putString("Interest", interest);
+                    //bundle.putString("Interest", interest);
+                    //intent.putExtras(bundle);
 
-                    intent.putExtras(bundle);
                     startActivity(intent);
 
                 }

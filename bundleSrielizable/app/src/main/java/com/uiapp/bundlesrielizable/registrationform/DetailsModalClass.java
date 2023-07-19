@@ -1,6 +1,8 @@
 package com.uiapp.bundlesrielizable.registrationform;
 
-public class DetailsModalClass {
+import java.io.Serializable;
+
+public class DetailsModalClass implements Serializable {
 
     String name = "";
     int age = 0;
