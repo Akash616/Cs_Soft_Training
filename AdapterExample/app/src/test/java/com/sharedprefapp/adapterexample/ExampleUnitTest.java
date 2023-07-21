@@ -1,4 +1,4 @@
-package com.uiapp.sharedpreferencesexample;
+package com.sharedprefapp.adapterexample;
 
 import org.junit.Test;
 
