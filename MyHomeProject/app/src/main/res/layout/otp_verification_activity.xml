@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:overScrollMode="never"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/arrow_back"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/iv_arrowBack_otpVerification"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/logo"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="60dp"
+            android:padding="3dp"
+            android:text="OTP VERIFICATION"
+            android:textAllCaps="true"
+            android:textColor="#3241AE"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:padding="3dp"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            android:textColor="#C5C3C3"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="80dp">
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_otp_edittext"
+                android:id="@+id/et_inputOtp1"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_otp_edittext"
+                android:id="@+id/et_inputOtp2"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="4dp"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:gravity="center"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_otp_edittext"
+                android:id="@+id/et_inputOtp3"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:gravity="center"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_otp_edittext"
+                android:id="@+id/et_inputOtp4"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:gravity="center"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_otp_edittext"
+                android:id="@+id/et_inputOtp5"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:gravity="center"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_otp_edittext"
+                android:id="@+id/et_inputOtp6"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:gravity="end|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Verify OTP"
+                android:textColor="#3241AE"
+                android:textSize="20sp"
+                android:layout_marginEnd="15dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_fab_btn"
+                android:backgroundTint="#3241AE"
+                android:src="@drawable/arrow_forward"
+                android:tintMode="@color/white"
+                app:fabSize="auto"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_btn"
+            android:backgroundTint="#3241AE"
+            android:paddingHorizontal="45dp"
+            android:text="Re-send"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
