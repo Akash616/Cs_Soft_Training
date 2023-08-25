@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LogoActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -19,12 +21,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="@string/app_logo"
-                android:src="@drawable/logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:layout_marginVertical="40dp"/>
+                android:layout_marginVertical="40dp"
+                android:contentDescription="@string/app_logo"
+                android:src="@drawable/logo" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,7 +36,7 @@
                 android:text="User Login"
                 android:textAllCaps="true"
                 android:textColor="#3241AE"
-                android:textSize="25sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -50,104 +52,132 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mobile Number"
-                android:textSize="15sp"
                 android:layout_marginStart="60dp"
-                android:layout_marginEnd="40dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="10dp"
+                android:text="Mobile Number"
+                android:textSize="15sp" />
 
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:background="@drawable/rounded_edittext"
-                android:inputType="number"
-                android:padding="15dp"
-                android:layout_marginHorizontal="50dp"
-                android:textColor="#959393"/>
+                android:gravity="center_vertical">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:ccpDialog_allowSearch="false"
+                    app:ccpDialog_keyboardAutoPopup="true"
+                    app:ccpDialog_showCloseIcon="false"
+                    app:ccpDialog_showFastScroller="true"
+                    app:ccpDialog_showFlag="false"
+                    app:ccpDialog_showNameCode="false"
+                    app:ccpDialog_showPhoneCode="true"
+                    app:ccpDialog_textColor="@color/black"
+                    app:ccp_showArrow="true"
+                    app:ccp_showFlag="false"
+                    app:ccp_showFullName="false"
+                    app:ccp_showNameCode="false"
+                    app:ccp_showPhoneCode="true" />
+
+                <EditText
+                    android:id="@+id/editTextCarrierNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Mobile Number"
+                    android:inputType="phone"
+                    android:singleLine="true"/>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
                 android:layout_marginStart="60dp"
-                android:layout_marginEnd="40dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="10dp"
+                android:text="Password" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:background="@drawable/rounded_edittext"
                 android:inputType="textPassword"
                 android:padding="15dp"
-                android:layout_marginHorizontal="50dp"
-                android:textColor="#959393"/>
+                android:textColor="#959393" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/ll_one"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginVertical="30dp"
-            android:layout_marginHorizontal="40dp"
-            android:gravity="end|center">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_two"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="Login"
-                android:textColor="#3241AE"
-                android:textSize="25sp"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="30dp"
+                android:gravity="end|center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_one">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="monospace"
+                    android:text="Login"
+                    android:textColor="#3241AE"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_fab_btn"
+                    android:backgroundTint="#3241AE"
+                    android:src="@drawable/arrow_forward"
+                    android:tintMode="@color/white"
+                    app:fabCustomSize="50dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_fab_btn"
-                android:backgroundTint="#3241AE"
-                android:src="@drawable/arrow_forward"
-                android:tintMode="@color/white"
-                app:fabCustomSize="50dp"/>
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="30dp">
 
-        </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/rounded_btn"
+                    android:paddingHorizontal="12dp"
+                    android:text="Forgot Password?"
+                    android:textAllCaps="false"
+                    android:textColor="#3241AE" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_btn"
+                    android:backgroundTint="#3241AE"
+                    android:paddingHorizontal="40dp"
+                    android:text="New User"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/rounded_btn"
-                android:paddingHorizontal="12dp"
-                android:text="Forgot Password?"
-                android:textAllCaps="false"
-                android:textColor="#3241AE" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_btn"
-                android:backgroundTint="#3241AE"
-                android:paddingHorizontal="40dp"
-                android:text="New User"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
+            </LinearLayout>
 
         </LinearLayout>
 

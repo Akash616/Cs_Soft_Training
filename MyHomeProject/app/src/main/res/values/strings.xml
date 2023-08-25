@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyHomeProject</string>
     <string name="app_logo">App Logo</string>
+    <string name="MAPS_API_KEY">AIzaSyBAKEHFqNEtGyUbbUDCD7E77yncgeF6zGI</string>
 </resources>

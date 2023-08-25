@@ -6,11 +6,12 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hbb20.CountryCodePicker;
 
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    //CountryCodePicker ccp;
+    CountryCodePicker ccp;
     EditText editTextCarrierNumber;
 
     @Override
@@ -18,10 +19,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forgot_password_activity);
 
-        //ccp = findViewById(R.id.ccp);
+        ccp = findViewById(R.id.ccp);
         editTextCarrierNumber = findViewById(R.id.editTextCarrierNumber);
 
-        //ccp.registerCarrierNumberEditText(editTextCarrierNumber);
+        ccp.registerCarrierNumberEditText(editTextCarrierNumber);
 
     }
 }

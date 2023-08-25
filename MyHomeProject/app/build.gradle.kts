@@ -41,5 +41,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Country Code Picker library
-    implementation("com.hbb20:ccp:2.7.3")
+    implementation("com.hbb20:ccp:2.3.1")
+    //Google map api libraray
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+
 }
