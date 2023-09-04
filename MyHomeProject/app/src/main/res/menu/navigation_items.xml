@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/optMyAccount"
+        android:icon="@drawable/myaccount"
+        android:iconTint="#3241AE"
+        android:title="My Account" />
 
-        <item
-            android:id="@+id/optMyAccount"
-            android:icon="@drawable/myaccount"
-            android:iconTint="#3241AE"
-            android:title="My Account" />
+    <item
+        android:id="@+id/optHomeServices"
+        android:icon="@drawable/homeservices"
+        android:iconTint="#3241AE"
+        android:title="Home Services" />
 
-        <item
-            android:id="@+id/optHomeServices"
-            android:icon="@drawable/homeservices"
-            android:iconTint="#3241AE"
-            android:title="Home Services" />
+    <item
+        android:id="@+id/optMyRequests"
+        android:icon="@drawable/myrequests"
+        android:title="My Requests" />
 
-        <item
-            android:id="@+id/optMyRequests"
-            android:icon="@drawable/myrequests"
-            android:title="My Requests" />
+    <item
+        android:id="@+id/optAddedServices"
+        android:icon="@drawable/addedservices"
+        android:title="Value Added Services" />
 
-        <item
-            android:id="@+id/optAddedServices"
-            android:icon="@drawable/addedservices"
-            android:title="Value Added Services" />
+    <item
+        android:id="@+id/optContactUs"
+        android:icon="@drawable/contactus"
+        android:title="Contact Us" />
 
-        <item
-            android:id="@+id/optContactUs"
-            android:icon="@drawable/contactus"
-            android:title="Contact Us" />
-
-    </group>
 
     <item
         android:id="@+id/optTerms"
@@ -45,7 +42,6 @@
     <item
         android:id="@+id/optSignOut"
         android:icon="@drawable/signout"
-        android:title="Sign Out" />
-
+        android:title="Sign Out"/>
 
 </menu>

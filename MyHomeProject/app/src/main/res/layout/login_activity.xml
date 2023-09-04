@@ -2,7 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".LogoActivity"
+    tools:context=".LoginActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -57,42 +57,34 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="10dp"
                 android:text="Mobile Number"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:background="@drawable/rounded_edittext"
-                android:gravity="center_vertical">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <com.hbb20.CountryCodePicker
-                    android:id="@+id/ccp"
+                    android:id="@+id/country_code_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    app:ccpDialog_allowSearch="false"
-                    app:ccpDialog_keyboardAutoPopup="true"
-                    app:ccpDialog_showCloseIcon="false"
-                    app:ccpDialog_showFastScroller="true"
-                    app:ccpDialog_showFlag="false"
-                    app:ccpDialog_showNameCode="false"
-                    app:ccpDialog_showPhoneCode="true"
-                    app:ccpDialog_textColor="@color/black"
-                    app:ccp_showArrow="true"
+                    app:ccp_textSize="14sp"
+                    app:ccp_defaultNameCode="IND"
                     app:ccp_showFlag="false"
-                    app:ccp_showFullName="false"
-                    app:ccp_showNameCode="false"
-                    app:ccp_showPhoneCode="true" />
+                    app:ccp_showNameCode="false"/>
 
                 <EditText
                     android:id="@+id/editTextCarrierNumber"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:backgroundTint="@android:color/transparent"
                     android:hint="Mobile Number"
                     android:inputType="phone"
-                    android:singleLine="true"/>
+                    android:singleLine="true"
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 
@@ -103,16 +95,18 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="10dp"
-                android:text="Password" />
+                android:text="Password"
+                android:textSize="14sp"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginHorizontal="40dp"
                 android:background="@drawable/rounded_edittext"
                 android:inputType="textPassword"
-                android:padding="15dp"
-                android:textColor="#959393" />
+                android:textColor="#959393"
+                android:textSize="14sp"
+                android:paddingHorizontal="10dp"/>
 
             <LinearLayout
                 android:id="@+id/ll_two"
@@ -136,13 +130,14 @@
                     android:textSize="16sp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_fab_btn"
                     android:backgroundTint="#3241AE"
                     android:src="@drawable/arrow_forward"
                     android:tintMode="@color/white"
-                    app:fabCustomSize="50dp" />
+                    app:fabCustomSize="40dp" />
 
             </LinearLayout>
 
@@ -158,6 +153,7 @@
                 android:layout_marginTop="30dp">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_forgotPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="30dp"
@@ -165,14 +161,16 @@
                     android:paddingHorizontal="12dp"
                     android:text="Forgot Password?"
                     android:textAllCaps="false"
-                    android:textColor="#3241AE" />
+                    android:textColor="#3241AE"
+                    android:padding="10dp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_newUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_btn"
                     android:backgroundTint="#3241AE"
-                    android:paddingHorizontal="40dp"
+                    android:paddingHorizontal="35dp"
                     android:text="New User"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
