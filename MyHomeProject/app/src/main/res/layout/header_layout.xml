@@ -14,9 +14,11 @@
         android:layout_marginStart="30dp">
 
         <ImageView
+            android:id="@+id/iv_profileImage"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/man_5"/>
+            android:src="@drawable/man_5"
+            android:scaleType="fitXY"/>
 
     </LinearLayout>
 
@@ -27,6 +29,7 @@
         android:padding="10dp">
 
         <TextView
+            android:id="@+id/tv_personName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="John Smith"
@@ -36,6 +39,7 @@
             android:fontFamily="serif"/>
 
         <TextView
+            android:id="@+id/tv_personEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="johnsmith1@gmail.com"
