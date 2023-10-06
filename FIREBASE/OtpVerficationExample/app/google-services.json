@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "639634746357",
+    "project_id": "otpverficationexample",
+    "storage_bucket": "otpverficationexample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639634746357:android:68553408281b175c4f4ebc",
+        "android_client_info": {
+          "package_name": "com.practicefirebaseproject.otpverficationexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639634746357-m3pn3n18j53742bbipmc864cou3lj23m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHOq5AF-mcg9rKh0FfS8O6hKsTilQ7zec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639634746357-m3pn3n18j53742bbipmc864cou3lj23m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

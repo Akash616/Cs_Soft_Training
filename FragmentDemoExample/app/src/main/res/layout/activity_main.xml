@@ -15,12 +15,26 @@
         android:name="com.bottomnavbarapp.fragmentdemoexample.DemoOneFragment"
         tools:layout="@layout/fragment_demo_one"/>
 
-    <fragment
-        android:id="@+id/fragment_two"
-        android:layout_width="match_parent"
+<!--    <fragment-->
+<!--        android:id="@+id/fragment_two"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:name="com.bottomnavbarapp.fragmentdemoexample.DemoTwoFragment"-->
+<!--        tools:layout="@layout/fragment_demo_two"/>-->
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:name="com.bottomnavbarapp.fragmentdemoexample.DemoTwoFragment"
-        tools:layout="@layout/fragment_demo_two"/>
+        android:id="@+id/btn_one"
+        android:layout_gravity="center"
+        android:text="Fragment Button one"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_two"
+        android:layout_gravity="center"
+        android:text="Fragment Button one"/>
+
 
 </LinearLayout>

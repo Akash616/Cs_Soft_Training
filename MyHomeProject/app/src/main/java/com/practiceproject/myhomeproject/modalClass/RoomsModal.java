@@ -1,6 +1,8 @@
 package com.practiceproject.myhomeproject.modalClass;
 
-public class RoomsModal {
+import java.io.Serializable;
+
+public class RoomsModal implements Serializable {
 
     int img;
     String location, bedrooms, rent, bathrooms;

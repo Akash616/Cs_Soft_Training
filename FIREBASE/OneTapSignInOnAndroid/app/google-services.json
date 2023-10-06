@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "598493213910",
+    "project_id": "onetapsigninonandroid",
+    "storage_bucket": "onetapsigninonandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598493213910:android:b85459b53b3d83ec590577",
+        "android_client_info": {
+          "package_name": "com.firebaseproject.onetapsigninonandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598493213910-hhjm0mmk3vdbpj4dfriaptp8fm9ue915.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp6O6-OSGJOWDpNrrIaYOmV62EZGahV_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598493213910-hhjm0mmk3vdbpj4dfriaptp8fm9ue915.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

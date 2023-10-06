@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "275099136906",
+    "project_id": "newsigninexample",
+    "storage_bucket": "newsigninexample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275099136906:android:153b5a75a2a65603624e73",
+        "android_client_info": {
+          "package_name": "com.firebaseproject.googlenewsigninexample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMKQ381siARIuHxElM3-sWcZ4R8INTPx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

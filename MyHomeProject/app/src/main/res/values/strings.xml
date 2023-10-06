@@ -5,4 +5,11 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
+
+    <string name="facebook_app_id">1040749167113174</string>
+    <string name="fb_login_protocol_scheme">fb1040749167113174</string>
+    <string name="facebook_client_token">9d2137ab5e6683f8fb9fc0cb55e88500</string>
+
+    <string name="default_web_client_id">965115105123-unmc9n73s5mto4mpfe96ti580dvtudsm.apps.googleusercontent.com</string>
+
 </resources>

@@ -31,6 +31,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.facebook.CallbackManager;
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -38,11 +40,12 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.practiceproject.myhomeproject.modalClass.RoomsModal;
+import com.practiceproject.myhomeproject.myInterface.MyClickListener;
 import com.practiceproject.myhomeproject.rvAdapter.RvAdapter;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements MyClickListener {
 
     Spinner spinner_home;
     Toolbar iv_toolbar;
@@ -60,6 +63,8 @@ public class HomeActivity extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     FirebaseAuth firebaseAuth;
     GoogleSignInClient googleSignInClient;
+    CallbackManager mCallbackManager;
+    RoomsModal roomsModal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,13 +101,23 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         googleSignInClient = GoogleSignIn.getClient(HomeActivity.this, GoogleSignInOptions.DEFAULT_SIGN_IN);
+
+        mCallbackManager = CallbackManager.Factory.create(); //LoginManager.getInstance().logOut();
         naigationview_home.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 //drawer Automatically close after user click any drawer items
                 int id = item.getItemId();
                 //Log.e("ItemID", "" + id);
-                Toast.makeText(HomeActivity.this, "clicked sign out", Toast.LENGTH_SHORT).show();
+                if (id==R.id.optSignOut){
+                    LoginManager.getInstance().logOut();
+                    googleSignInClient.signOut();
+                    firebaseAuth.signOut();
+                    Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(getApplicationContext(), "Logout successful", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
                 drawerlayout_home.closeDrawer(GravityCompat.START);
                 return true;
             }
@@ -163,7 +178,7 @@ public class HomeActivity extends AppCompatActivity {
                             "2 Bedrooms", "7000", "1 Bathrooms"));
 
                 }
-                adapter = new RvAdapter(HomeActivity.this, list);
+                adapter = new RvAdapter(HomeActivity.this, list, HomeActivity.this); //for the listener i'll pass this
                 rv_home.setAdapter(adapter);
             }
 
@@ -214,6 +229,16 @@ public class HomeActivity extends AppCompatActivity {
         } else {
             super.onBackPressed(); //activity close/App close
         }
+    }
+
+    @Override
+    public void onItemClick(RoomsModal roomsModal) {
+        this.roomsModal = roomsModal;
+        Intent intent = new Intent(HomeActivity.this, HomeDetails.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Details", roomsModal);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
 }

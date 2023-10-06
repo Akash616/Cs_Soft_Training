@@ -1,4 +1,4 @@
-package com.adaptorsapp.recyclerviewexample;
+package com.adaptorsapp.recyclerviewexample.DemoExample;
 
 public class DetailsModelClass {
 

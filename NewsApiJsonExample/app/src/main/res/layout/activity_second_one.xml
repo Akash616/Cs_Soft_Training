@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".newsApiGetExample.SecondActivityOne">
+
+    <ImageView
+        android:id="@+id/iv_news_sscreen"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:contentDescription="News Image"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="25dp"
+        android:textDirection="rtl"/>
+
+    <TextView
+        android:id="@+id/tv_title_sscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Title"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textAlignment="inherit"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginVertical="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_desc_sscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="inherit"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginVertical="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_content_sscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content"
+        android:textStyle="normal"
+        android:fontFamily="monospace"
+        android:textAlignment="inherit"
+        android:textColor="#AAA6A6"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"/>
+
+</LinearLayout>

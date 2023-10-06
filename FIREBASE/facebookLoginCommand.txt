@@ -1,0 +1,10 @@
+
+      
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Akash Gupta\.android\debug.keystore" | "D:\cs_soft_trainig\FIREBASE\openssl-0.9.8e_X64\bin\openssl" sha1 -binary | "D:\cs_soft_trainig\FIREBASE\openssl-0.9.8e_X64\bin\openssl" base64
+      
+
+
+after run in cmd -
+Warning:
+The certificate uses the SHA1withRSA signature algorithm which is considered a security risk. This algorithm will be disabled in a future update.
+ExQ5NJ2sGfCVHubZoT+41FgCTg4=

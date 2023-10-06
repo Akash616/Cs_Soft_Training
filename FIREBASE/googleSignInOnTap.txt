@@ -1,0 +1,6 @@
+//Google signin on tap
+
+1. https://firebase.google.com/docs/auth/android/google-signin
+2. https://developers.google.com/identity/one-tap/android/create-new-accounts
+3. https://developers.google.com/android/guides/client-auth
+4. https://developers.google.com/identity/one-tap/android/get-saved-credentials

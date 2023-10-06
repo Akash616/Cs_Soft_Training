@@ -1,11 +1,12 @@
-package com.adaptorsapp.recyclerviewexample;
+package com.adaptorsapp.recyclerviewexample.DemoExample;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.ListView;
+
+import com.adaptorsapp.recyclerviewexample.R;
 
 import java.util.ArrayList;
 import java.util.List;

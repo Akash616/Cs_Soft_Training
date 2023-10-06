@@ -1,8 +1,11 @@
 package com.practiceproject.myhomeproject;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +22,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -30,12 +40,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 import com.hbb20.CountryCodePicker;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class SignupActivity extends AppCompatActivity {
@@ -49,9 +62,11 @@ public class SignupActivity extends AppCompatActivity {
     LinearLayout ll_signup;
     ArrayList<String> arrayList;
     Intent intent;
-    ImageView btSignIn;
+    ImageView btSignIn, login_button;
     GoogleSignInClient googleSignInClient;
     FirebaseAuth firebaseAuth;
+    CallbackManager mCallbackManager;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -136,7 +151,7 @@ public class SignupActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(SignupActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        et_signup_dob.setText(dayOfMonth+"/"+(month+1)+"/"+year);
+                        et_signup_dob.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
                     }
                 }, year, month, date);
                 datePickerDialog.show();
@@ -145,6 +160,83 @@ public class SignupActivity extends AppCompatActivity {
 
         firebaseAuthWithGoogle(); //email authen...
 
+        //-----facebook login----------------------------
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        login_button =  findViewById(R.id.login_button);
+        firebaseAuthWithFacebook();
+
+    }
+
+    private void firebaseAuthWithFacebook() {
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        if (accessToken!=null && !accessToken.isExpired()){
+            startActivity(new Intent(SignupActivity.this, HomeActivity.class));
+        }
+
+        // Initialize Firebase Auth
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        // Initialize Facebook Login button
+        mCallbackManager = CallbackManager.Factory.create();
+        //LoginButton loginButton = findViewById(R.id.login_button); //bec. custom button
+        login_button = findViewById(R.id.login_button);
+        login_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginManager.getInstance().logInWithReadPermissions(SignupActivity.this, Arrays.asList("email", "public_profile"));
+                LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        Log.d(TAG, "facebook:onSuccess:" + loginResult);
+                        handleFacebookAccessToken(loginResult.getAccessToken());
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        Log.d(TAG, "facebook:onCancel");
+                    }
+
+                    @Override
+                    public void onError(FacebookException error) {
+                        Log.d(TAG, "facebook:onError", error);
+                    }
+                });
+            }
+        });
+    }
+
+    private void handleFacebookAccessToken(AccessToken token) {
+        Log.d(TAG, "handleFacebookAccessToken:" + token);
+
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithCredential:success");
+                            displayToast("Firebase authentication successful");
+                            user = firebaseAuth.getCurrentUser();
+                            if (user != null) {
+//                                UsersData usersData = new UsersData();
+//                                usersData.setUserName(user.getDisplayName());
+                                Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+//                                intent.putExtra("name", user.getDisplayName().toString());
+//                                intent.putExtra("email", user.getEmail());
+//                                intent.putExtra("image", user.getPhotoUrl());
+                                startActivity(intent);
+                            }
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            displayToast("Authentication Failed :" + task.getException().getMessage());
+                            Toast.makeText(SignupActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
     }
 
     private void firebaseAuthWithGoogle() {
@@ -172,6 +264,17 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart(); //if user is logged in then directly move to home screen
+        user = firebaseAuth.getCurrentUser();
+        if (user != null){
+            Intent intent1 = new Intent(SignupActivity.this, HomeActivity.class);
+            //intent1.putExtra("name", user.getDisplayName());
+            startActivity(intent1);
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -188,8 +291,8 @@ public class SignupActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    startActivity(new Intent(SignupActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                                     displayToast("Firebase authentication successful");
+                                    startActivity(new Intent(SignupActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                                 } else {
                                     displayToast("Authentication Failed :" + task.getException().getMessage());
                                 }
@@ -201,6 +304,9 @@ public class SignupActivity extends AppCompatActivity {
                 }
             }
         }
+
+        // Pass the activity result back to the Facebook SDK
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
 
     }
 

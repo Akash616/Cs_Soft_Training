@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     BottomNavigationView bnv_one;
     TextView textview_dashboard, textview_profile, textview_users;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

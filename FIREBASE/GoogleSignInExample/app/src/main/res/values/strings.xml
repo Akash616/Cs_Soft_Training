@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GoogleSignInExample</string>
+    <string name="web_client_id">646960968232-j8h5ciuo33dtrl9surnsu7i55h9uohn4.apps.googleusercontent.com</string>
+</resources>
