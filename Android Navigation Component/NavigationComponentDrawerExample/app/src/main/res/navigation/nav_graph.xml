@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuMyAccount">
+
+<!--    Make sure that id of fragment in navigation graph is same as declared in -->
+<!--    navigation menu.-->
+    <fragment
+        android:id="@+id/menuMyAccount"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentdrawerexample.MyAccountFragment"
+        android:label="My Account"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/menuMyRequest"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentdrawerexample.MyRequestFragment"
+        android:label="My Request"
+        tools:layout="@layout/fragment_my_request" />
+    <fragment
+        android:id="@+id/menuRate"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentdrawerexample.RateFragment"
+        android:label="Rate"
+        tools:layout="@layout/fragment_rate" />
+    <fragment
+        android:id="@+id/menuSetting"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentdrawerexample.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/menuSignOut"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentdrawerexample.SignOutFragment"
+        android:label="Sign Out"
+        tools:layout="@layout/fragment_sign_out" />
+    <fragment
+        android:id="@+id/menuTermAndCond"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentdrawerexample.TermsAndConditionFragment"
+        android:label="Terms And Conditions"
+        tools:layout="@layout/fragment_terms_and_condition" />
+</navigation>
