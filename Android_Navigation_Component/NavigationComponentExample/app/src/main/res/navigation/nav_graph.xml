@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <!--    Make sure that id of fragment in navigation graph is same as declared in -->
+    <!--    navigation menu.-->
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentexample.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentexample.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation"
+            app:destination="@id/navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.jetpacknavigationcomponent.navigationcomponentexample.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_navigation"
+            app:destination="@id/navigation" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/navigation"
+        app:startDestination="@id/homeFragment">
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.jetpacknavigationcomponent.navigationcomponentexample.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home" >
+            <action
+                android:id="@+id/action_homeFragment_to_nextScreenFragment"
+                app:destination="@id/nextScreenFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/myAccountFragment"
+            android:name="com.jetpacknavigationcomponent.navigationcomponentexample.MyAccountFragment"
+            android:label="fragment_my_account"
+            tools:layout="@layout/fragment_my_account" />
+        <fragment
+            android:id="@+id/myRequestFragment"
+            android:name="com.jetpacknavigationcomponent.navigationcomponentexample.MyRequestFragment"
+            android:label="fragment_my_request"
+            tools:layout="@layout/fragment_my_request" />
+        <fragment
+            android:id="@+id/rateFragment"
+            android:name="com.jetpacknavigationcomponent.navigationcomponentexample.RateFragment"
+            android:label="fragment_rate"
+            tools:layout="@layout/fragment_rate" />
+        <fragment
+            android:id="@+id/nextScreenFragment"
+            android:name="com.jetpacknavigationcomponent.navigationcomponentexample.NextScreenFragment"
+            android:label="fragment_next_screen"
+            tools:layout="@layout/fragment_next_screen" />
+    </navigation>
+
+</navigation>

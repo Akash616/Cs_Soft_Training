@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/myAccountFragment"
+        android:icon="@drawable/myaccount"
+        android:title="My Account"
+        android:menuCategory="secondary"/>
+
+    <item
+        android:id="@id/myRequestFragment"
+        android:icon="@drawable/myrequests"
+        android:title="My Request"
+        android:menuCategory="secondary"/>
+
+    <item
+        android:id="@id/rateFragment"
+        android:icon="@drawable/rate"
+        android:title="Rate"
+        android:menuCategory="secondary"/>
+
+</menu>

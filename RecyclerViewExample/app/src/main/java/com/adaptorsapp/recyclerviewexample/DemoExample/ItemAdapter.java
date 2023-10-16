@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.adaptorsapp.recyclerviewexample.R;
+
 import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
@@ -34,8 +36,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.imageview_one.setImageResource(list.get(position).img);
-        holder.textview_one.setText(list.get(position).name);
+        holder.imageview_one.setImageResource(list.get(position).getImg());
+        holder.textview_one.setText(list.get(position).getName());
         holder.textview_two.setText(list.get(position).course);
     }
 
